@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NewsDetailImageCell" customModule="TodayNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="303" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="303" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ScR-th-ex3">
+                        <rect key="frame" x="0.0" y="0.0" width="303" height="300"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chc-Bd-fyu">
+                        <rect key="frame" x="15" y="230" width="273" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="DNS-Yi-WQ5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ScR-th-ex3" secondAttribute="bottom" id="7lu-h9-BoH"/>
+                <constraint firstAttribute="bottom" secondItem="Chc-Bd-fyu" secondAttribute="bottom" constant="50" id="BII-Vz-D2J"/>
+                <constraint firstItem="ScR-th-ex3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="C2x-1D-RUL"/>
+                <constraint firstItem="Chc-Bd-fyu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Kk2-52-2c7"/>
+                <constraint firstItem="ScR-th-ex3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="L6s-oZ-H3F"/>
+                <constraint firstAttribute="trailing" secondItem="Chc-Bd-fyu" secondAttribute="trailing" constant="15" id="QBJ-zM-1YA"/>
+                <constraint firstAttribute="trailing" secondItem="ScR-th-ex3" secondAttribute="trailing" id="dgf-ia-Wxd"/>
+            </constraints>
+            <connections>
+                <outlet property="abstractLabel" destination="Chc-Bd-fyu" id="Yh4-ZE-HNt"/>
+                <outlet property="abstractLabelHeight" destination="DNS-Yi-WQ5" id="hr3-mk-3Fz"/>
+                <outlet property="imageView" destination="ScR-th-ex3" id="nCS-V4-Ept"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

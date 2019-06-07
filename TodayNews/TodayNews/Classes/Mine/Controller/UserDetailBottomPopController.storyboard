@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Detail Bottom Pop Controller-->
+        <scene sceneID="jhn-EX-1iR">
+            <objects>
+                <viewController storyboardIdentifier="UserDetailBottomPopController" id="rQ8-B3-rOp" customClass="UserDetailBottomPopController" customModule="TodayNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yyf-Mg-P50"/>
+                        <viewControllerLayoutGuide type="bottom" id="heR-oO-vjX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="swY-N7-AVc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_118x58_" translatesAutoresizingMaskIntoConstraints="NO" id="rZO-xG-bt2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vkt-QH-UGH">
+                                <rect key="frame" x="0.0" y="30" width="375" height="622"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rQ8-B3-rOp" id="odb-Tb-7dQ"/>
+                                    <outlet property="delegate" destination="rQ8-B3-rOp" id="mlT-TH-xu4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rZO-xG-bt2" secondAttribute="trailing" id="2nk-QK-QuX"/>
+                            <constraint firstItem="heR-oO-vjX" firstAttribute="top" secondItem="rZO-xG-bt2" secondAttribute="bottom" id="C6c-Mq-qot"/>
+                            <constraint firstItem="Vkt-QH-UGH" firstAttribute="top" secondItem="yyf-Mg-P50" secondAttribute="bottom" constant="10" id="Sa1-ol-dMn"/>
+                            <constraint firstAttribute="trailing" secondItem="Vkt-QH-UGH" secondAttribute="trailing" id="UIj-mt-VQc"/>
+                            <constraint firstItem="heR-oO-vjX" firstAttribute="top" secondItem="Vkt-QH-UGH" secondAttribute="bottom" constant="15" id="d4g-k5-1za"/>
+                            <constraint firstItem="Vkt-QH-UGH" firstAttribute="leading" secondItem="swY-N7-AVc" secondAttribute="leading" id="fPn-Jj-f9k"/>
+                            <constraint firstItem="rZO-xG-bt2" firstAttribute="leading" secondItem="swY-N7-AVc" secondAttribute="leading" id="jhd-g9-MmH"/>
+                            <constraint firstItem="rZO-xG-bt2" firstAttribute="top" secondItem="yyf-Mg-P50" secondAttribute="bottom" id="mxb-xm-tjW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Vkt-QH-UGH" id="G8a-CX-YEv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHR-hz-ZWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-61" y="-172"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="popup_118x58_" width="118" height="58"/>
+    </resources>
+</document>

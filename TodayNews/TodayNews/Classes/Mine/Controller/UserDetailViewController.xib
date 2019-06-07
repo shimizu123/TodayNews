@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDetailViewController" customModule="TodayNews" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomViewBottom" destination="WLQ-6h-qGF" id="7iA-4q-G2G"/>
+                <outlet property="bottomViewHeight" destination="eWL-uu-eH1" id="37d-6n-AJt"/>
+                <outlet property="bottomview" destination="caE-cS-Wpo" id="kq7-Rm-LKw"/>
+                <outlet property="tableView" destination="egr-dc-gag" id="RYw-aA-TYz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caE-cS-Wpo">
+                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="eWL-uu-eH1"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="egr-dc-gag" customClass="UserDetailTableView" customModule="TodayNews" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="5yI-0w-dTF"/>
+                        <outlet property="delegate" destination="-1" id="xdk-Wb-ytb"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="egr-dc-gag" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KA2-hw-y2t"/>
+                <constraint firstAttribute="trailing" secondItem="egr-dc-gag" secondAttribute="trailing" id="N3N-gV-OgL"/>
+                <constraint firstItem="egr-dc-gag" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="R2w-BF-Rav"/>
+                <constraint firstItem="caE-cS-Wpo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="T5o-Hv-hkc"/>
+                <constraint firstAttribute="bottom" secondItem="caE-cS-Wpo" secondAttribute="bottom" id="WLQ-6h-qGF"/>
+                <constraint firstAttribute="trailing" secondItem="caE-cS-Wpo" secondAttribute="trailing" id="aFb-0I-v9d"/>
+                <constraint firstItem="caE-cS-Wpo" firstAttribute="top" secondItem="egr-dc-gag" secondAttribute="bottom" id="rX6-yB-Nyf"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

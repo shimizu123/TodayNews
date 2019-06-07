@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserDetailNavigationBar" customModule="TodayNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVo-aJ-L6F" userLabel="Navigation Bar">
+                    <rect key="frame" x="0.0" y="-44" width="375" height="88"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVU-jW-I7c" userLabel="Return Button">
+                    <rect key="frame" x="0.0" y="5" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="2cW-E9-f8U"/>
+                        <constraint firstAttribute="width" constant="35" id="qVM-tE-e2t"/>
+                    </constraints>
+                    <state key="normal" image="personal_home_back_white_24x24_"/>
+                    <connections>
+                        <action selector="back:" destination="iN0-l3-epB" eventType="touchUpInside" id="mh4-1w-QHu"/>
+                    </connections>
+                </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8V-Rx-kpz" userLabel="Name Label">
+                    <rect key="frame" x="152" y="11" width="70" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="9ft-lo-6I6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjB-I4-T6P" customClass="AnimatableButton" customModule="IBAnimatable">
+                    <rect key="frame" x="232" y="7.5" width="72" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="NQc-Ni-0x1"/>
+                        <constraint firstAttribute="width" constant="72" id="v19-y9-JsO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="关注"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="concernButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="eLB-xk-YFu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2O-Cz-usz" userLabel="More Button">
+                    <rect key="frame" x="340" y="5.5" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="Qpa-PM-edT"/>
+                        <constraint firstAttribute="height" constant="35" id="rJc-f8-gbK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" image="new_morewhite_titlebar_22x22_"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="BVo-aJ-L6F" secondAttribute="bottom" id="2tT-nB-Ego"/>
+                <constraint firstItem="QVU-jW-I7c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="920-St-WUH"/>
+                <constraint firstItem="MjB-I4-T6P" firstAttribute="leading" secondItem="k8V-Rx-kpz" secondAttribute="trailing" constant="10" id="ERW-Qg-icA"/>
+                <constraint firstItem="BVo-aJ-L6F" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="PAw-YD-hVm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="X2O-Cz-usz" secondAttribute="trailing" id="XrD-aG-7X7"/>
+                <constraint firstItem="MjB-I4-T6P" firstAttribute="centerY" secondItem="k8V-Rx-kpz" secondAttribute="centerY" id="ZCj-3K-xSf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BVo-aJ-L6F" secondAttribute="trailing" id="ZNL-AY-hry"/>
+                <constraint firstItem="QVU-jW-I7c" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aXa-aP-dYm"/>
+                <constraint firstItem="k8V-Rx-kpz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="c2h-cn-Emj"/>
+                <constraint firstItem="BVo-aJ-L6F" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-44" id="del-cY-eIV"/>
+                <constraint firstItem="X2O-Cz-usz" firstAttribute="centerY" secondItem="QVU-jW-I7c" secondAttribute="centerY" id="uPs-EZ-hSt"/>
+                <constraint firstItem="k8V-Rx-kpz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wsb-rl-HlL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="concernButton" destination="MjB-I4-T6P" id="lWu-Sw-eIP"/>
+                <outlet property="moreButton" destination="X2O-Cz-usz" id="c7T-q2-hqR"/>
+                <outlet property="nameLabel" destination="k8V-Rx-kpz" id="tnI-Un-Csc"/>
+                <outlet property="navigationBar" destination="BVo-aJ-L6F" id="pcX-ey-gyu"/>
+                <outlet property="navigationBarTop" destination="del-cY-eIV" id="Uzs-vK-LDI"/>
+                <outlet property="returnButton" destination="QVU-jW-I7c" id="23D-bi-xit"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="new_morewhite_titlebar_22x22_" width="22" height="22"/>
+        <image name="personal_home_back_white_24x24_" width="24" height="24"/>
+    </resources>
+</document>

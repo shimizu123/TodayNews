@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TodayNews' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'HandyJSON', '4.0.0-beta.1'
+  pod 'Kingfisher', '~> 4.6.2'
+  pod 'IBAnimatable', '~> 5.0.0'
+  pod 'SwiftTheme', '~> 0.4.1'
+  pod 'RxSwift', '~> 4.1.2'
+  pod 'RxCocoa', '~> 4.1.2'
+  pod 'SQLite.swift', '~> 0.11.4'
+  pod 'SVProgressHUD'
+  pod 'MJRefresh'
+  pod 'SGPagingView', '~> 1.6.1'
+  pod 'BMPlayer'
+  pod 'FDFullscreenPopGesture'
+  pod 'NVActivityIndicatorView', '~> 4.0.1'
+  # pod 'Texture'
+  pod 'lottie-ios', '~> 2.5.0'
+
+end

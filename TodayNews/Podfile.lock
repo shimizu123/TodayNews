@@ -1,0 +1,70 @@
+PODS:
+  - Alamofire (4.8.2)
+  - BMPlayer (1.0.1):
+    - BMPlayer/Full (= 1.0.1)
+  - BMPlayer/Core (1.0.1)
+  - BMPlayer/Full (1.0.1):
+    - BMPlayer/Core
+    - NVActivityIndicatorView (~> 4.0.0)
+    - SnapKit (~> 4.0.0)
+  - FDFullscreenPopGesture (1.1)
+  - HandyJSON (4.0.0-beta.1)
+  - IBAnimatable (5.0.0)
+  - Kingfisher (4.6.4)
+  - lottie-ios (2.5.3)
+  - MJRefresh (3.2.0)
+  - NVActivityIndicatorView (4.0.1):
+    - NVActivityIndicatorView/Presenter (= 4.0.1)
+  - NVActivityIndicatorView/Presenter (4.0.1)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - SGPagingView (1.6.1)
+  - SnapKit (4.0.1)
+  - SQLite.swift (0.11.6):
+    - SQLite.swift/standard (= 0.11.6)
+  - SQLite.swift/standard (0.11.6)
+  - SVProgressHUD (2.2.5)
+  - SwiftTheme (0.4.4)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - BMPlayer
+  - FDFullscreenPopGesture
+  - HandyJSON (= 4.0.0-beta.1)
+  - IBAnimatable (~> 5.0.0)
+  - Kingfisher (~> 4.6.2)
+  - lottie-ios (~> 2.5.0)
+  - MJRefresh
+  - NVActivityIndicatorView (~> 4.0.1)
+  - RxCocoa (~> 4.1.2)
+  - RxSwift (~> 4.1.2)
+  - SGPagingView (~> 1.6.1)
+  - SQLite.swift (~> 0.11.4)
+  - SVProgressHUD
+  - SwiftTheme (~> 0.4.1)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  BMPlayer: 44eebf06eb01450dd14ea74b27d07c5222f0eed1
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
+  IBAnimatable: aa2286a9cf8fb4ae2e1be85c5287ae56143b024f
+  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  NVActivityIndicatorView: 77ed6d7b571643e24899e7858bf9ae2ee4c21f31
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SGPagingView: 11753f76f2fa9f306d152f33e833f735c0751def
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  SQLite.swift: 46d890be8601964454bd3392527f863d1b802d45
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftTheme: a381f983da92153908b7a9eeb961b18b6d94d614
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: f7a5bd6808c332e1f7fca77a09dc9d3c70347c30
+
+COCOAPODS: 1.2.1

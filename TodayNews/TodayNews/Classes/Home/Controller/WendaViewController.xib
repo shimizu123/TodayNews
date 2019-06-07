@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WendaViewController" customModule="TodayNews" customModuleProvider="target">
+            <connections>
+                <outlet property="answerButton" destination="lMV-YD-b12" id="joz-ow-yOS"/>
+                <outlet property="bottomView" destination="p89-lb-aBk" id="D2W-3m-7bC"/>
+                <outlet property="bottomViewBottom" destination="cE8-FM-Dzu" id="CTb-oa-swu"/>
+                <outlet property="tableView" destination="HZd-Kz-rVf" id="qUH-GF-Dr9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wC8-hv-2tx">
+                    <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMV-YD-b12">
+                            <rect key="frame" x="262.5" y="0.0" width="112.5" height="40"/>
+                            <color key="backgroundColor" red="0.96862745100000003" green="0.34901960780000002" blue="0.36078431370000003" alpha="1" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="112.5" id="rGg-wh-K5t"/>
+                            </constraints>
+                            <state key="normal" title="回答"/>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p89-lb-aBk" customClass="WendaAnswerBottomView" customModule="TodayNews" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="262.5" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5hx-Jt-2fg"/>
+                        <constraint firstAttribute="trailing" secondItem="lMV-YD-b12" secondAttribute="trailing" id="68e-Zw-uEb"/>
+                        <constraint firstItem="p89-lb-aBk" firstAttribute="top" secondItem="wC8-hv-2tx" secondAttribute="top" id="9ju-BE-Cri"/>
+                        <constraint firstItem="p89-lb-aBk" firstAttribute="leading" secondItem="wC8-hv-2tx" secondAttribute="leading" id="Oey-Ny-fYL"/>
+                        <constraint firstItem="lMV-YD-b12" firstAttribute="leading" secondItem="p89-lb-aBk" secondAttribute="trailing" id="QTa-yy-YbF"/>
+                        <constraint firstAttribute="bottom" secondItem="p89-lb-aBk" secondAttribute="bottom" id="cE8-FM-Dzu"/>
+                        <constraint firstItem="lMV-YD-b12" firstAttribute="top" secondItem="wC8-hv-2tx" secondAttribute="top" id="k2f-Qy-zH5"/>
+                        <constraint firstAttribute="bottom" secondItem="lMV-YD-b12" secondAttribute="bottom" id="y9o-P7-rcP"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-Kz-rVf">
+                    <rect key="frame" x="0.0" y="20" width="375" height="607"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="3NN-oj-9Fj"/>
+                        <outlet property="delegate" destination="-1" id="A4s-A8-J7z"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HZd-Kz-rVf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="N64-pS-59w"/>
+                <constraint firstItem="wC8-hv-2tx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Swe-jz-7x6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HZd-Kz-rVf" secondAttribute="trailing" id="dRL-2Z-kss"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wC8-hv-2tx" secondAttribute="bottom" id="fid-zL-dj9"/>
+                <constraint firstItem="wC8-hv-2tx" firstAttribute="top" secondItem="HZd-Kz-rVf" secondAttribute="bottom" id="mYC-a9-rdq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wC8-hv-2tx" secondAttribute="trailing" id="x8c-UN-CQQ"/>
+                <constraint firstItem="HZd-Kz-rVf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xbz-BK-UdJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

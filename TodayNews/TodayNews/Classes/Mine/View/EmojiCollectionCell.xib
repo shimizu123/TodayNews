@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EmojiCollectionCell" customModule="TodayNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="158" height="112"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="158" height="112"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEA-ju-f4m">
+                        <rect key="frame" x="0.0" y="0.0" width="158" height="112"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="GEA-ju-f4m" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4CB-qc-cHX"/>
+                <constraint firstAttribute="bottom" secondItem="GEA-ju-f4m" secondAttribute="bottom" id="Or9-UJ-8fo"/>
+                <constraint firstAttribute="trailing" secondItem="GEA-ju-f4m" secondAttribute="trailing" id="Qzi-86-yrH"/>
+                <constraint firstItem="GEA-ju-f4m" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="g7l-WQ-W6l"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="iconButton" destination="GEA-ju-f4m" id="N2Z-VW-LUm"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MyOtherCell" customModule="TodayNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKC-Ck-bd3" userLabel="分割线">
+                        <rect key="frame" x="15" y="43" width="305" height="0.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="hYm-6q-6oJ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13F-1k-6XR" userLabel="Left Label">
+                        <rect key="frame" x="15" y="0.0" width="37.5" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_rightarrow_8x14_" translatesAutoresizingMaskIntoConstraints="NO" id="5p7-cd-jWe" userLabel="Right Image View">
+                        <rect key="frame" x="297" y="15" width="8" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="8" id="Ivr-fd-SzG"/>
+                            <constraint firstAttribute="height" constant="14" id="Zdx-cB-2cG"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkd-mH-Adb" userLabel="Right Label">
+                        <rect key="frame" x="249.5" y="0.0" width="37.5" height="43"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="13F-1k-6XR" secondAttribute="bottom" id="26v-sE-tXH"/>
+                    <constraint firstItem="ZKC-Ck-bd3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="4J7-zs-5Dq"/>
+                    <constraint firstItem="13F-1k-6XR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4eG-dt-as9"/>
+                    <constraint firstAttribute="trailing" secondItem="5p7-cd-jWe" secondAttribute="trailing" constant="15" id="4s1-Zp-hoQ"/>
+                    <constraint firstItem="5p7-cd-jWe" firstAttribute="leading" secondItem="Fkd-mH-Adb" secondAttribute="trailing" constant="10" id="66g-vu-fEY"/>
+                    <constraint firstItem="13F-1k-6XR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="66u-iH-W9k"/>
+                    <constraint firstItem="Fkd-mH-Adb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HoJ-FB-YXB"/>
+                    <constraint firstAttribute="bottom" secondItem="ZKC-Ck-bd3" secondAttribute="bottom" id="bDR-Jb-M7f"/>
+                    <constraint firstAttribute="trailing" secondItem="ZKC-Ck-bd3" secondAttribute="trailing" id="d10-3Q-xsE"/>
+                    <constraint firstItem="5p7-cd-jWe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nDW-br-Vh3"/>
+                    <constraint firstItem="ZKC-Ck-bd3" firstAttribute="top" secondItem="Fkd-mH-Adb" secondAttribute="bottom" id="qV7-sv-vX5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="leftLabel" destination="13F-1k-6XR" id="J2g-q1-lal"/>
+                <outlet property="rightImageView" destination="5p7-cd-jWe" id="MbD-8A-e4b"/>
+                <outlet property="rightLabel" destination="Fkd-mH-Adb" id="KIf-no-Hnk"/>
+                <outlet property="separatorView" destination="ZKC-Ck-bd3" id="HRH-yA-5yD"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="setting_rightarrow_8x14_" width="8" height="14"/>
+    </resources>
+</document>

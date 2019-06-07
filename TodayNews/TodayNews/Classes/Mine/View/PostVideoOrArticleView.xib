@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PostVideoOrArticleView" customModule="TodayNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofA-FE-d7y">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="fzo-X0-1eh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0L-gG-k4K">
+                    <rect key="frame" x="60" y="0.0" width="315" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9po-jK-fWS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <connections>
+                        <action selector="coverButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="I5K-uG-Q47"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="i0L-gG-k4K" secondAttribute="bottom" id="1gD-5m-I1x"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9po-jK-fWS" secondAttribute="trailing" id="6Bq-Su-dXR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i0L-gG-k4K" secondAttribute="trailing" id="6dE-Pa-ZY1"/>
+                <constraint firstItem="i0L-gG-k4K" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="6sN-S2-ubZ"/>
+                <constraint firstItem="9po-jK-fWS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="73q-yv-Rft"/>
+                <constraint firstItem="ofA-FE-d7y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9iv-No-RZn"/>
+                <constraint firstAttribute="bottom" secondItem="9po-jK-fWS" secondAttribute="bottom" id="csm-ih-G9R"/>
+                <constraint firstItem="ofA-FE-d7y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eUo-b8-Eq8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ofA-FE-d7y" secondAttribute="bottom" id="rgr-aV-nYf"/>
+                <constraint firstItem="9po-jK-fWS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="sJ4-so-2mv"/>
+                <constraint firstItem="i0L-gG-k4K" firstAttribute="leading" secondItem="ofA-FE-d7y" secondAttribute="trailing" id="wom-PT-GJ4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="iconButton" destination="ofA-FE-d7y" id="WZf-Ih-tet"/>
+                <outlet property="iconButtonWidth" destination="fzo-X0-1eh" id="m85-je-ikJ"/>
+                <outlet property="titleLabel" destination="i0L-gG-k4K" id="xbt-dw-lda"/>
+            </connections>
+        </view>
+    </objects>
+</document>

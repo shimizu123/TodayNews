@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MyConcernCell" customModule="TodayNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="74"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="74"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9E-aY-tAm" userLabel="Name Label">
+                        <rect key="frame" x="0.0" y="44" width="70" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="52l-AY-hWq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ces-Bv-QhD" userLabel="Avatar Image View">
+                        <rect key="frame" x="15" y="4" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="Cof-cY-oPP"/>
+                            <constraint firstAttribute="height" constant="40" id="iPS-aR-46W"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dAj-HV-IPe" userLabel="Vip Image View">
+                        <rect key="frame" x="40" y="29" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="QtE-Er-SdQ"/>
+                            <constraint firstAttribute="height" constant="15" id="V9a-0X-OXn"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kB-oS-fiT" userLabel="Tips Button">
+                        <rect key="frame" x="43" y="6" width="10" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="IDd-4R-GDY"/>
+                            <constraint firstAttribute="height" constant="10" id="deL-50-kpb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Ces-Bv-QhD" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Bh4-lD-Yl8"/>
+                <constraint firstItem="dAj-HV-IPe" firstAttribute="bottom" secondItem="Ces-Bv-QhD" secondAttribute="bottom" id="DcS-Fw-P3n"/>
+                <constraint firstAttribute="trailing" secondItem="w9E-aY-tAm" secondAttribute="trailing" id="GhB-kQ-GDb"/>
+                <constraint firstItem="w9E-aY-tAm" firstAttribute="top" secondItem="Ces-Bv-QhD" secondAttribute="bottom" id="bYw-Bf-FDG"/>
+                <constraint firstItem="w9E-aY-tAm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eed-us-Oyg"/>
+                <constraint firstItem="dAj-HV-IPe" firstAttribute="trailing" secondItem="Ces-Bv-QhD" secondAttribute="trailing" id="iS2-kI-geZ"/>
+                <constraint firstItem="1kB-oS-fiT" firstAttribute="centerY" secondItem="Ces-Bv-QhD" secondAttribute="centerY" constant="-13" id="qe0-Uo-KrZ"/>
+                <constraint firstItem="1kB-oS-fiT" firstAttribute="centerX" secondItem="Ces-Bv-QhD" secondAttribute="centerX" constant="13" id="s0f-La-iTb"/>
+                <constraint firstAttribute="bottom" secondItem="w9E-aY-tAm" secondAttribute="bottom" id="zBD-MV-Gva"/>
+            </constraints>
+            <size key="customSize" width="81" height="99"/>
+            <connections>
+                <outlet property="avatarImageView" destination="Ces-Bv-QhD" id="83U-2j-8ew"/>
+                <outlet property="nameLabel" destination="w9E-aY-tAm" id="WGX-cO-Bnc"/>
+                <outlet property="tipsButton" destination="1kB-oS-fiT" id="PkO-v0-Iiq"/>
+                <outlet property="vipImageView" destination="dAj-HV-IPe" id="g92-mm-FK3"/>
+            </connections>
+            <point key="canvasLocation" x="28" y="76"/>
+        </collectionViewCell>
+    </objects>
+</document>

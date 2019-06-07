@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="RelationRecommendCell" customModule="TodayNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="142" height="190"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="142" height="190"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tny-b6-zSK" userLabel="Base View" customClass="AnimatableView" customModule="IBAnimatable">
+                        <rect key="frame" x="0.0" y="0.0" width="142" height="190"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E2O-oE-AV3" userLabel="Avatar Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                <rect key="frame" x="38" y="10" width="66" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="jd9-Q5-otK"/>
+                                    <constraint firstAttribute="height" constant="66" id="tCS-ID-tfc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kUh-xO-7YR" userLabel="Vip Image View">
+                                <rect key="frame" x="85" y="57" width="19" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="19" id="2HZ-Lm-AU4"/>
+                                    <constraint firstAttribute="height" constant="19" id="ueg-wP-dQX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZO-ez-cSD">
+                                <rect key="frame" x="0.0" y="81" width="142" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="4bY-rv-RRi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGv-24-Gib">
+                                <rect key="frame" x="0.0" y="104" width="142" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfT-pr-aVv" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="15" y="152" width="112" height="28"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.3921568627" blue="0.37254901959999998" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="CFr-MJ-NCF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="关注"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="concernButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="OUX-Me-3hq"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hgt-HW-FMg">
+                                <rect key="frame" x="60" y="155" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="iCa-Yi-Ptz"/>
+                                    <constraint firstAttribute="width" constant="22" id="xnJ-LK-ERh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aZO-ez-cSD" firstAttribute="leading" secondItem="tny-b6-zSK" secondAttribute="leading" id="1pi-5v-ChH"/>
+                            <constraint firstItem="kUh-xO-7YR" firstAttribute="trailing" secondItem="E2O-oE-AV3" secondAttribute="trailing" id="4gB-oM-eLm"/>
+                            <constraint firstItem="aZO-ez-cSD" firstAttribute="top" secondItem="E2O-oE-AV3" secondAttribute="bottom" constant="5" id="92S-Ir-pkO"/>
+                            <constraint firstAttribute="trailing" secondItem="sGv-24-Gib" secondAttribute="trailing" id="9TG-Oa-KVO"/>
+                            <constraint firstItem="sGv-24-Gib" firstAttribute="top" secondItem="aZO-ez-cSD" secondAttribute="bottom" id="ClO-Gn-KE7"/>
+                            <constraint firstAttribute="trailing" secondItem="aZO-ez-cSD" secondAttribute="trailing" id="Gon-HW-0fA"/>
+                            <constraint firstItem="vfT-pr-aVv" firstAttribute="centerX" secondItem="Hgt-HW-FMg" secondAttribute="centerX" id="OAj-Wl-Mlh"/>
+                            <constraint firstItem="vfT-pr-aVv" firstAttribute="top" secondItem="sGv-24-Gib" secondAttribute="bottom" constant="5" id="QIQ-VI-3jK"/>
+                            <constraint firstItem="vfT-pr-aVv" firstAttribute="leading" secondItem="tny-b6-zSK" secondAttribute="leading" constant="15" id="Zzd-J2-doN"/>
+                            <constraint firstItem="vfT-pr-aVv" firstAttribute="centerY" secondItem="Hgt-HW-FMg" secondAttribute="centerY" id="mUg-bv-FAe"/>
+                            <constraint firstItem="E2O-oE-AV3" firstAttribute="top" secondItem="tny-b6-zSK" secondAttribute="top" constant="10" id="qpG-om-N1X"/>
+                            <constraint firstAttribute="trailing" secondItem="vfT-pr-aVv" secondAttribute="trailing" constant="15" id="uKC-59-Ro1"/>
+                            <constraint firstAttribute="bottom" secondItem="vfT-pr-aVv" secondAttribute="bottom" constant="10" id="w7I-xh-ZmM"/>
+                            <constraint firstItem="E2O-oE-AV3" firstAttribute="centerX" secondItem="tny-b6-zSK" secondAttribute="centerX" id="wX9-0k-nOz"/>
+                            <constraint firstItem="sGv-24-Gib" firstAttribute="leading" secondItem="tny-b6-zSK" secondAttribute="leading" id="yOD-Ng-TWa"/>
+                            <constraint firstItem="kUh-xO-7YR" firstAttribute="bottom" secondItem="E2O-oE-AV3" secondAttribute="bottom" id="zdE-Cg-1j0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="tny-b6-zSK" secondAttribute="bottom" id="0xS-vs-X5Z"/>
+                <constraint firstAttribute="trailing" secondItem="tny-b6-zSK" secondAttribute="trailing" id="g9N-qm-bOW"/>
+                <constraint firstItem="tny-b6-zSK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="k6G-f6-hlr"/>
+                <constraint firstItem="tny-b6-zSK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xtm-Ox-4jG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="avatarImageView" destination="E2O-oE-AV3" id="GH9-NC-Eab"/>
+                <outlet property="baseView" destination="tny-b6-zSK" id="Dux-C0-9jK"/>
+                <outlet property="concernButton" destination="vfT-pr-aVv" id="1QW-0U-QRG"/>
+                <outlet property="loadingImageView" destination="Hgt-HW-FMg" id="nyu-9X-cYy"/>
+                <outlet property="nameLabel" destination="aZO-ez-cSD" id="g3d-en-qgO"/>
+                <outlet property="recommendReasonLabel" destination="sGv-24-Gib" id="16p-xL-8a5"/>
+                <outlet property="vImageView" destination="kUh-xO-7YR" id="ehT-3k-EcE"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
