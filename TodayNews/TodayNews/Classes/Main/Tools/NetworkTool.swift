@@ -28,6 +28,8 @@ protocol NetworkToolProtocol {
     static func loadNewsDetail(articleURL: String, completionHandler: @escaping (_ images: [NewsDetailImage], _ abstracts: [String]) -> ())
     
     // MARK: - --------------------------------- 视频 video  ---------------------------------
+    // MARK: 视频顶部新闻标题的数据
+    static func loadVideoApiCategories(completionHandler: @escaping (_ newsTitles: [HomeNewsTitle]) -> ())
     // MARK: 解析头条的视频真实播放地址
     static func parseVideoRealURL(video_id: String, completionHandler: @escaping (_ realVideo: RealVideo) -> ())
     // MARK: 视频详情数据
@@ -314,6 +316,35 @@ extension NetworkToolProtocol {
     
     
     // MARK: - --------------------------------- 视频 video  ---------------------------------
+    // MARK: 视频顶部新闻标题的数据
+    // - parameter completionHandler: 返回标题数据
+    /// - parameter newsTitles: 视频标题数组
+    static func loadVideoApiCategories(completionHandler: @escaping (_ newsTitles: [HomeNewsTitle]) -> ()) {
+        let url = BASE_URL + "/video_api/get_category/v1/?"
+        let params = ["device_id": device_id,
+                      "iid": iid]
+        Alamofire.request(url, parameters: params).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                return
+            }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    return
+                }
+                if let datas = json["data"].arrayObject {
+                    var titles = [HomeNewsTitle]()
+                    titles.append(HomeNewsTitle.deserialize(from: "{\"category\": \"video\", \"name\": \"推荐\"}")!)
+                    titles += datas.flatMap({ HomeNewsTitle.deserialize(from: $0 as? NSDictionary)
+                    })
+                    completionHandler(titles)
+                }
+            }
+        }
+    }
+    
+    
+    
     // 解析头条的视频真实播放地址
     /// - [可参考这篇博客](http://blog.csdn.net/dianliang01/article/details/73163086)
     /// - parameter video_id: 视频 id

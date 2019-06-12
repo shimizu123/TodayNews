@@ -7,40 +7,144 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import BMPlayer
+import SnapKit
 
 class VideoTableViewController: HomeTableViewController {
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    // 上一次播放的 cell
+    var priorCell: VideoCell?
+    // 视频真实地址
+    var realVideo = RealVideo()
+    // 当前播放的时间
+    var currentTime: TimeInterval = 0
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        player.delegate = self
+        tableView.rowHeight = screenWidth * 0.67
+        tableView.ym_registerCell(cell: VideoCell.self)   
     }
 
+    // 把播放器添加到 cell 上
+    private func addPlayer(on cell: VideoCell) {
+        // 视频播放时隐藏 cell 的部分子视图
+        cell.hideSubviews()
+        // 解析头条的视频真实播放地址
+        NetworkTool.parseVideoRealURL(video_id: cell.video.video_detail_info.video_id) {
+            self.realVideo = $0
+            cell.bgImageButton.addSubview(self.player)
+            self.player.snp.makeConstraints({ $0.edges.equalToSuperview() })
+            // 设置视频播放地址
+            self.player.setVideo(resource: BMPlayerResource(url: URL(string: $0.video_list.video_1.mainURL)!))
+            self.priorCell = cell
+        }
+    }
     
+    // 移除播放器
+    private func removePlayer() {
+        player.pause()
+        player.removeFromSuperview()
+        priorCell = nil
+    }
 
     // MARK: - Table view data source
-
     
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 0
+        return news.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        
+        let cell = tableView.ym_dequeueReusableCell(indexPath: indexPath) as VideoCell
+        cell.video = news[indexPath.row]
+        // 用户头像
+        cell.avatarButton.rx.controlEvent(.touchUpInside).subscribe { _ in
+            let userDetailVC = UserDetailViewController()
+            userDetailVC.userId = cell.video.user_info.user_id
+            self.navigationController?.pushViewController(userDetailVC, animated: true)
+        }.disposed(by: disposeBag)
+        // 背景图片按钮点击
+        cell.bgImageButton.rx.controlEvent(.touchUpInside).subscribe { _ in
+            // 如果有值，说明当前有正在播放的视频
+            if let priorCell = self.priorCell {
+                if cell != priorCell {
+                    // 判断当前播放器是否正在播放
+                    if self.player.isPlaying {
+                        self.player.pause()
+                        self.player.removeFromSuperview()
+                    }
+                    // 设置之前 cell 的属性
+                    priorCell.showSubviews()
+                }
+            } else { // 说明是第一次点击 cell，直接添加播放器
+                // 把播放器添加到 cell 上
+                self.addPlayer(on: cell)
+            }
+        }.disposed(by: disposeBag)
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        // 当前点击的 cell
+        let cell = tableView.cellForRow(at: indexPath) as! VideoCell
+        // 如果播放器正在播放，则停止播放
+        if player.isPlaying {
+            removePlayer()
+        }
+        // 跳转到详情控制器
+        let videoDetailVC = VideoDetailViewController()
+        videoDetailVC.video = cell.video
+        videoDetailVC.delegate = self
+        videoDetailVC.currentTime = currentTime
+        videoDetailVC.currentIndexPath = indexPath
+        navigationController?.pushViewController(videoDetailVC, animated: true)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        
+        
+        
+    }
+    
+}
+
+extension VideoTableViewController: BMPlayerDelegate {
+    
+    func bmPlayer(player: BMPlayer ,playerStateDidChange state: BMPlayerState) {
+        
+    }
+    
+    func bmPlayer(player: BMPlayer ,loadedTimeDidChange loadedDuration: TimeInterval, totalDuration: TimeInterval) {
+        
+    }
+    
+    func bmPlayer(player: BMPlayer ,playTimeDidChange currentTime : TimeInterval, totalTime: TimeInterval) {
+        self.currentTime = currentTime
+    }
+    
+    func bmPlayer(player: BMPlayer ,playerIsPlaying playing: Bool) {
+        
+    }
+    
+    func bmPlayer(player: BMPlayer, playerOrientChanged isFullscreen: Bool) {
+        
+    }
+    
+}
+
+// MARK: - VideoDetailViewControllerDelegate
+extension VideoTableViewController: VideoDetailViewControllerDelegate {
+    // 详情控制器将要消失
+    func VideoDetailViewControllerViewWillDisappear(realVideo: RealVideo, currentTime: TimeInterval, currentIndex: IndexPath) {
         
     }
     

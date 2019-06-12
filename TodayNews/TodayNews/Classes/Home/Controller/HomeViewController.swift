@@ -8,15 +8,19 @@
 
 import UIKit
 import SGPagingView
+import RxCocoa
+import RxSwift
 
 class HomeViewController: UIViewController {
     
     // 标题和内容
-    var pageTitleView: SGPageTitleView?
-    var pageContentView: SGPageContentScrollView?
+    private var pageTitleView: SGPageTitleView?
+    private var pageContentView: SGPageContentScrollView?
     
     // 自定义导航栏
     private lazy var navigationBar = HomeNavigationView.loadViewFromNib()
+    
+    private lazy var disposeBag = DisposeBag()
     
     // 添加频道按钮
     private lazy var addChannelButton: UIButton = {
@@ -42,6 +46,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // 设置 UI
         setupUI()
+        // 点击事件
+        clickAction()
     }
 
     
@@ -68,7 +74,8 @@ class HomeViewController: UIViewController {
                 switch newsTitle.category {
                 case .video:
                     let videoTableVC = VideoTableViewController()
-                    
+                    videoTableVC.newsTitle = newsTitle
+                    videoTableVC.setupRefresh(with: .video)
                     self.addChildViewController(videoTableVC)
                 case .essayJoke:  // 段子
                     let essayJokeVC = HomeJokeViewController()
@@ -84,7 +91,7 @@ class HomeViewController: UIViewController {
                     self.addChildViewController(imageFunnyVC)
                 case .photos:     // 图片,组图
                     let photosVC = HomeImageViewController()
-                    
+                    photosVC.setupRefresh(with: .photos)
                     self.addChildViewController(photosVC)
                 case .jinritemai: // 特卖
                     let temaiVC = TeMaiViewController()
@@ -92,13 +99,40 @@ class HomeViewController: UIViewController {
                     self.addChildViewController(temaiVC)
                 default:
                     let homeTableVC = HomeRecommendController()
-                    
+                    homeTableVC.setupRefresh(with: newsTitle.category)
                     self.addChildViewController(homeTableVC)
                 }
             })
-            
+            // 内容视图
+            self.pageContentView = SGPageContentScrollView(frame: CGRect(x: 0, y: newsTitleHeight, width: screenWidth, height: self.view.height - newsTitleHeight), parentVC: self, childVCs: self.childViewControllers)
+            self.pageContentView?.delegatePageContentScrollView = self
+            self.view.addSubview(self.pageContentView!)
         }
     }
+    
+    // 点击事件
+    private func clickAction() {
+        // 搜索按钮点击
+        navigationBar.didSelectSearchButton = {
+            
+        }
+        // 头像按钮点击
+        navigationBar.didSelectAvatarButton = { [weak self] in
+            self?.navigationController?.pushViewController(MineViewController(), animated: true)
+        }
+        // 相机按钮点击
+        navigationBar.didSelectCameraButton = {
+            
+        }
+        // 添加频道点击
+        addChannelButton.rx.controlEvent(.touchUpInside).subscribe {
+            
+        }.disposed(by: disposeBag)
+        
+    }
+    
+    
+    
 }
 
 extension HomeViewController: SGPageTitleViewDelegate, SGPageContentScrollViewDelegate {

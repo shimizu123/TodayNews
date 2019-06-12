@@ -10,6 +10,8 @@ import UIKit
 import BMPlayer
 import SnapKit
 import SVProgressHUD
+import RxCocoa
+import RxSwift
 
 protocol VideoDetailViewControllerDelegate: class {
     // 详情控制器将要消失
@@ -35,6 +37,8 @@ class VideoDetailViewController: UIViewController {
     var currentTime: TimeInterval = 0
     // 当前点击的索引
     var currentIndexPath = IndexPath(item: 0, section: 0)
+    
+    private let disposeBag = DisposeBag()
     
     // 用户信息 view
     private lazy var userView = VideoDetailUserView.loadViewFromNib()
@@ -156,10 +160,10 @@ class VideoDetailViewController: UIViewController {
     }
     
     deinit {
-        
+        // 使用手势返回的时候，调用下面方法手动销毁
+        player.prepareToDealloc()
     }
     
-
 }
 
 // MARK: - 添加点击事件
@@ -168,9 +172,30 @@ extension VideoDetailViewController {
     // 添加点击事件
     private func addAction() {
         // 覆盖按钮点击
-        
-        
-        
+        userView.coverButton.rx.controlEvent(.touchUpInside).subscribe { [weak self] in
+            let userDetailVC = UserDetailViewController()
+            userDetailVC.userId = self!.userView.userInfo.user_id
+            self?.navigationController?.pushViewController(userDetailVC, animated: true)
+        }.disposed(by: disposeBag)
+        // 点击了查看更多
+        relatedVideoView.didSelectCheckMoreButton = { [weak self] in
+            self?.tableView.tableHeaderView = self?.relatedVideoView
+        }
+        // 点击了 relatedVideoView 的 cell
+        relatedVideoView.didSelectCell = { [weak self] in
+            switch $0.card_type {
+            case .video, .adVideo: // 视频、广告视频
+                // 获取数据
+                self?.loadNetwork(with: $0)
+            case .adTextlink: // 广告链接
+                if self!.player.isPlaying {
+                    self?.player.pause()
+                }
+                let textLinkVC = TextLinkViewController()
+                textLinkVC.url = $0.web_url
+                self?.navigationController?.pushViewController(textLinkVC, animated: true)
+            }
+        }
     }
     
     // 评论点击
@@ -179,7 +204,14 @@ extension VideoDetailViewController {
     }
     /// 喜欢点击
     @IBAction func loveButtonClicked(_ sender: UIButton) {
-        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: {
+            sender.imageView?.transform = CGAffineTransform(scaleX: sender.imageView!.width * 0.2, y: sender.imageView!.height * 0.2)
+        }) { _ in
+            UIView.animate(withDuration: 0.5, animations: {
+                sender.imageView?.transform = .identity
+            })
+            sender.isSelected = !sender.isSelected
+        }
     }
     
     // 分享点击
