@@ -23,6 +23,8 @@
 		640D078B228FE0240068BBE3 /* HomeUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640D0789228FE0240068BBE3 /* HomeUserCell.xib */; };
 		640D41F92226569A000B3205 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D41F82226569A000B3205 /* NetworkTool.swift */; };
 		640D41FB2226F2A2000B3205 /* MyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D41FA2226F2A2000B3205 /* MyCellModel.swift */; };
+		640E334822B15B9C00A3250D /* RelatedVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E334622B15B9C00A3250D /* RelatedVideoTableViewController.swift */; };
+		640E334922B15B9C00A3250D /* RelatedVideoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640E334722B15B9C00A3250D /* RelatedVideoTableViewController.xib */; };
 		640EA6C82258F8EB001C40C8 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640EA6C72258F8EB001C40C8 /* SVProgressHUD+Extension.swift */; };
 		640EA6CB225A18C7001C40C8 /* UserDetailDongTaiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640EA6C9225A18C7001C40C8 /* UserDetailDongTaiCell.swift */; };
 		640EA6CC225A18C7001C40C8 /* UserDetailDongTaiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640EA6CA225A18C7001C40C8 /* UserDetailDongTaiCell.xib */; };
@@ -114,6 +116,8 @@
 		64C353CF222FEEE500074999 /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C353CE222FEEE500074999 /* UIKit+Extension.swift */; };
 		64C353D32230187900074999 /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64C353D12230187900074999 /* default_theme.plist */; };
 		64C353D42230187900074999 /* night_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64C353D22230187900074999 /* night_theme.plist */; };
+		64C5EC5322B69A0B003111C3 /* HomeJokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5EC5122B69A0B003111C3 /* HomeJokeCell.swift */; };
+		64C5EC5422B69A0B003111C3 /* HomeJokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C5EC5222B69A0B003111C3 /* HomeJokeCell.xib */; };
 		64C6DBF9223782CE00D4CC4C /* OfflineSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6DBF8223782CE00D4CC4C /* OfflineSectionHeader.swift */; };
 		64C6DBFC2237C3F300D4CC4C /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6DBFA2237C3F300D4CC4C /* UserDetailViewController.swift */; };
 		64C6DBFD2237C3F300D4CC4C /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C6DBFB2237C3F300D4CC4C /* UserDetailViewController.xib */; };
@@ -208,6 +212,8 @@
 		640D0789228FE0240068BBE3 /* HomeUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeUserCell.xib; sourceTree = "<group>"; };
 		640D41F82226569A000B3205 /* NetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		640D41FA2226F2A2000B3205 /* MyCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellModel.swift; sourceTree = "<group>"; };
+		640E334622B15B9C00A3250D /* RelatedVideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedVideoTableViewController.swift; sourceTree = "<group>"; };
+		640E334722B15B9C00A3250D /* RelatedVideoTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelatedVideoTableViewController.xib; sourceTree = "<group>"; };
 		640EA6C72258F8EB001C40C8 /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		640EA6C9225A18C7001C40C8 /* UserDetailDongTaiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailDongTaiCell.swift; sourceTree = "<group>"; };
 		640EA6CA225A18C7001C40C8 /* UserDetailDongTaiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailDongTaiCell.xib; sourceTree = "<group>"; };
@@ -305,6 +311,8 @@
 		64C353CE222FEEE500074999 /* UIKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
 		64C353D12230187900074999 /* default_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default_theme.plist; sourceTree = "<group>"; };
 		64C353D22230187900074999 /* night_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = night_theme.plist; sourceTree = "<group>"; };
+		64C5EC5122B69A0B003111C3 /* HomeJokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeJokeCell.swift; sourceTree = "<group>"; };
+		64C5EC5222B69A0B003111C3 /* HomeJokeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeJokeCell.xib; sourceTree = "<group>"; };
 		64C6DBF8223782CE00D4CC4C /* OfflineSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineSectionHeader.swift; sourceTree = "<group>"; };
 		64C6DBFA2237C3F300D4CC4C /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		64C6DBFB2237C3F300D4CC4C /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
@@ -576,6 +584,8 @@
 				64DF416D229416FF00BF2303 /* TheyUseCollectionCell.xib */,
 				645EF53C229BECEF00B89706 /* NewsDetailImageCell.swift */,
 				645EF53D229BECEF00B89706 /* NewsDetailImageCell.xib */,
+				64C5EC5122B69A0B003111C3 /* HomeJokeCell.swift */,
+				64C5EC5222B69A0B003111C3 /* HomeJokeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -753,6 +763,8 @@
 				642FDB3222A100B100C86B65 /* VideoDetailViewController.swift */,
 				642FDB3322A100B100C86B65 /* VideoDetailViewController.xib */,
 				645A0B7C22AB7B660022F794 /* TextLinkViewController.swift */,
+				640E334622B15B9C00A3250D /* RelatedVideoTableViewController.swift */,
+				640E334722B15B9C00A3250D /* RelatedVideoTableViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -983,6 +995,7 @@
 				642FDB3B22A1326700C86B65 /* VideoDetailUserView.xib in Resources */,
 				640EA6CC225A18C7001C40C8 /* UserDetailDongTaiCell.xib in Resources */,
 				64C827F12231176A000B0607 /* LoginHeaderView.xib in Resources */,
+				64C5EC5422B69A0B003111C3 /* HomeJokeCell.xib in Resources */,
 				645A0B8122AB8F8E0022F794 /* HomeAddCategoryController.storyboard in Resources */,
 				64C14B1222254D6400308C34 /* LaunchScreen.storyboard in Resources */,
 				640113ED226F8009005024A8 /* EmojiCollectionCell.xib in Resources */,
@@ -1009,6 +1022,7 @@
 				64C6DC0D22393D5900D4CC4C /* UserDetailHeaderView.xib in Resources */,
 				64DF416B22912B7000BF2303 /* HomeImageCell.xib in Resources */,
 				640D078B228FE0240068BBE3 /* HomeUserCell.xib in Resources */,
+				640E334922B15B9C00A3250D /* RelatedVideoTableViewController.xib in Resources */,
 				6413CA472268428E000E54B6 /* DongtaiDetailViewController.xib in Resources */,
 				64CBB5E9225CE31300C8C516 /* DongtaiOriginThreadView.xib in Resources */,
 				645A0B8522AB9CF20022F794 /* VideoCell.xib in Resources */,
@@ -1099,6 +1113,7 @@
 				64C827E42230B4C0000B0607 /* MyFirstSectionCell.swift in Sources */,
 				64EDD4DF226D77DB0062353C /* UserDiggCell.swift in Sources */,
 				642FDB4022A15A2F00C86B65 /* RelatedVideoCell.swift in Sources */,
+				64C5EC5322B69A0B003111C3 /* HomeJokeCell.swift in Sources */,
 				64618CC82235F80200637922 /* SQLiteManager.swift in Sources */,
 				64C6DC032237EA8900D4CC4C /* Emoji.swift in Sources */,
 				6413B04E224527EB00CC7834 /* TopTabScrollView.swift in Sources */,
@@ -1129,6 +1144,7 @@
 				640D077F228D8A1F0068BBE3 /* Video.swift in Sources */,
 				642FDB4722A290DD00C86B65 /* RelatedVideoFooterView.swift in Sources */,
 				64FEA7BB227ADE6E00389E00 /* WendaAnswerHeaderView.swift in Sources */,
+				640E334822B15B9C00A3250D /* RelatedVideoTableViewController.swift in Sources */,
 				64C14B402225572B00308C34 /* MineViewController.swift in Sources */,
 				64618CC52235F2FD00637922 /* OfflineDownloadCell.swift in Sources */,
 				64CBB5EB225CE7FE00C8C516 /* DongtaiCollectionView.swift in Sources */,

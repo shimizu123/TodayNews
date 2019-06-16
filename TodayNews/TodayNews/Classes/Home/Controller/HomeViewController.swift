@@ -79,15 +79,18 @@ class HomeViewController: UIViewController {
                     self.addChildViewController(videoTableVC)
                 case .essayJoke:  // 段子
                     let essayJokeVC = HomeJokeViewController()
-                    
+                    essayJokeVC.isJoke = true
+                    essayJokeVC.setupRefresh(with: .essayJoke)
                     self.addChildViewController(essayJokeVC)
                 case .imagePPMM:  // 街拍
                     let imagePPMMVC = HomeJokeViewController()
-                    
+                    imagePPMMVC.isJoke = false
+                    imagePPMMVC.setupRefresh(with: .imagePPMM)
                     self.addChildViewController(imagePPMMVC)
                 case .imageFunny: // 趣图
                     let imageFunnyVC = HomeJokeViewController()
-                    
+                    imageFunnyVC.isJoke = false
+                    imageFunnyVC.setupRefresh(with: .imageFunny)
                     self.addChildViewController(imageFunnyVC)
                 case .photos:     // 图片,组图
                     let photosVC = HomeImageViewController()

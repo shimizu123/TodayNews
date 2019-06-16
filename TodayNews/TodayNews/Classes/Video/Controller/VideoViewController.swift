@@ -38,20 +38,39 @@ class VideoViewController: UIViewController {
         // 设置自定义导航栏
         navigationItem.titleView = navigationBar
         // 视频顶部新闻标题的数据
-        
-        
-        
-        
+        NetworkTool.loadVideoApiCategories {
+            let configuration = SGPageTitleViewConfigure()
+            configuration.titleColor = .black
+            configuration.titleSelectedColor = UIColor.globalRedColor()
+            configuration.indicatorColor = .clear
+            // 标题名称的数组
+            self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: newsTitleHeight), delegate: self, titleNames: $0.flatMap({ $0.name }), configure: configuration)
+            self.pageTitleView?.backgroundColor = .clear
+            self.view.addSubview(self.pageTitleView!)
+            // 设置子控制器
+            _ = $0.flatMap({ (newsTitle) -> () in
+                let videoTableVC = VideoTableViewController()
+                videoTableVC.setupRefresh(with: newsTitle.category)
+                self.addChildViewController(videoTableVC)
+            })
+            // 内容视图
+            self.pageContentView = SGPageContentScrollView(frame: CGRect(x: 0, y: newsTitleHeight, width: screenWidth, height: self.view.height - newsTitleHeight), parentVC: self, childVCs: self.childViewControllers)
+            self.pageContentView?.delegatePageContentScrollView = self
+            self.view.addSubview(self.pageContentView!)
+        }
     }
     
     // 点击事件
     private func clickAction() {
-        
-        
-        
+        // 搜索按钮点击
+        navigationBar.didSelectSearchButton = {
+            
+        }
+        // 头像按钮点击
+        navigationBar.didSelectAvatarButton = {
+            self.navigationController?.pushViewController(MineViewController(), animated: true)
+        }
     }
-
-    
 
 }
 

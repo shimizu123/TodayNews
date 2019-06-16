@@ -117,7 +117,7 @@
     
     [childVC beginAppearanceTransition:YES animated:NO];
     
-    if (firstAdd) {
+    if (!firstAdd) {
         [self.scrollView addSubview:childVC.view];
         childVC.view.frame = CGRectMake(offsetX, 0, self.SG_width, self.SG_height);
     }
@@ -213,7 +213,7 @@
         
         [childVC beginAppearanceTransition:YES animated:NO];
         
-        if (firstAdd) {
+        if (!firstAdd) {
             [self.scrollView addSubview:childVC.view];
             childVC.view.frame = CGRectMake(offsetX, 0, self.SG_width, self.SG_height);
         }
