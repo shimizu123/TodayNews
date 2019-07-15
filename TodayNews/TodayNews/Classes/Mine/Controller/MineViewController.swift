@@ -114,10 +114,10 @@ extension MineViewController {
             if concerns.count == 1 {cell.myConcern = concerns[0]}
             if concerns.count > 1 {cell.myConcerns = concerns}
             //点击了关注用户
-            cell.myConcernSelected = {
+            cell.myConcernSelected = { [weak self] in
                 let userDetailVC = UserDetailViewController()
                 userDetailVC.userId = $0.userid
-                self.navigationController?.pushViewController(userDetailVC, animated: true)
+                self?.navigationController?.pushViewController(userDetailVC, animated: true)
             }
             
             return cell

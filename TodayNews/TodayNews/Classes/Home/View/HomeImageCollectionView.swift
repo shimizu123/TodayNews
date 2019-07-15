@@ -22,8 +22,8 @@ class HomeImageCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         super.awakeFromNib()
         self.collectionViewLayout = DongtaiCollectionViewFlowLayout()
         self.ym_registerCell(cell: HomeImageCell.self)
-       // self.delegate = self
-       // self.dataSource = self
+        self.delegate = self
+        self.dataSource = self
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

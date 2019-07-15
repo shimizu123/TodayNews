@@ -89,6 +89,7 @@ class NewsDetailImageController: UIViewController, StoryboardLoadable, NewsDetai
                 self.images = images
                 self.abstracts = abstracts
                 self.collectionView.reloadData()
+                self.setupAttributeString(index: 1) // 先设置好第一张图片的子标题
             })
         }
     }
@@ -229,8 +230,8 @@ extension NewsDetailImageController: UICollectionViewDelegate, UICollectionViewD
     
     // 方式1 ，下面的代码可以和在 cell 中设置的 abstractLabel 对应来写，二者选一种
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        currentIndex = Int(scrollView.contentOffset.x / screenWidth + 0.5) + 1
-      //  setupAttributeString(index: currentIndex)
+        currentIndex = Int(scrollView.contentOffset.x / screenWidth) + 1
+        setupAttributeString(index: currentIndex)
     }
     
     // 设置子标题

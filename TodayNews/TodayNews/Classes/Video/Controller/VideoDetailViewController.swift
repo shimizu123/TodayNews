@@ -100,7 +100,7 @@ class VideoDetailViewController: UIViewController {
         player.snp.makeConstraints {
             $0.top.equalTo(self.view).offset(isIphoneX ? 40 : 0)
             $0.left.right.equalTo(self.view)
-            $0.height.equalTo(self.view.snp.width).multipliedBy(9 / 16)
+            $0.height.equalTo(self.view.snp.width).multipliedBy(9.0 / 16.0)
         }
         
         backButton.snp.makeConstraints {
@@ -172,11 +172,11 @@ extension VideoDetailViewController {
     // 添加点击事件
     private func addAction() {
         // 覆盖按钮点击
-        userView.coverButton.rx.controlEvent(.touchUpInside).subscribe { [weak self] in
+        userView.coverButton.rx.controlEvent(.touchUpInside).subscribe (onNext: { [weak self] in
             let userDetailVC = UserDetailViewController()
             userDetailVC.userId = self!.userView.userInfo.user_id
             self?.navigationController?.pushViewController(userDetailVC, animated: true)
-        }.disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         // 点击了查看更多
         relatedVideoView.didSelectCheckMoreButton = { [weak self] in
             self?.tableView.tableHeaderView = self?.relatedVideoView

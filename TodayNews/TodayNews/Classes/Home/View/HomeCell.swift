@@ -124,10 +124,10 @@ class HomeCell: UITableViewCell, RegisterCellFromNib {
                     setupRightImageView()
                 }
             } else { // 没有视频
-                if aNews.middle_image.url != "" {
+                if aNews.middle_image.url != "" && aNews.image_list.count == 0 {
                     rightImageView.kf.setImage(with: URL(string: aNews.middle_image.urlString))
                     rightImageViewWidth.constant = screenWidth * 0.28
-                }else if aNews.image_list.count != 0 {
+                }else {
                     setupRightImageView()
                     if aNews.image_list.count == 1 { // 右侧显示图片
                         rightImageView.kf.setImage(with: URL(string: aNews.image_list.first!.urlString))

@@ -37,7 +37,7 @@ class NewsDetailImageCell: UICollectionViewCell, RegisterCellFromNib {
             let abstractAttributeString = NSAttributedString(string: abstract, attributes: [.font: UIFont.systemFont(ofSize: 17)])
             numberAttributeString.append(abstractAttributeString)
             // 方式2 ，和图片详情控制器里在 scrollView 的的代理里设置二者择一
-            abstractLabel.attributedText = numberAttributeString
+          //  abstractLabel.attributedText = numberAttributeString
         }
     }
     

@@ -181,11 +181,11 @@ class DongtaiTableViewController: UITableViewController {
     private func cellFor(tableView: UITableView, at indexPath: IndexPath, with data: [UserDetailDongtai]) -> UserDetailDongTaiCell {
         let cell = tableView.ym_dequeueReusableCell(indexPath: indexPath) as UserDetailDongTaiCell
         cell.dongtai = data[indexPath.row]
-        cell.didSelectDongtaiUserName = {
-            self.didSelectHeaderUserId?($0)
+        cell.didSelectDongtaiUserName = { [weak self] in
+            self?.didSelectHeaderUserId?($0)
         }
-        cell.didSelectDongtaiTopic = {
-            self.didSelectHeaderTopicId?($0)
+        cell.didSelectDongtaiTopic = { [weak self] in
+            self?.didSelectHeaderTopicId?($0)
         }
         
         return cell

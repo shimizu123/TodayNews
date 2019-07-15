@@ -17,14 +17,12 @@ class VideoTableViewController: HomeTableViewController {
     private lazy var disposeBag = DisposeBag()
     
     // 上一次播放的 cell
-    var priorCell: VideoCell?
+    private var priorCell: VideoCell?
     // 视频真实地址
-    var realVideo = RealVideo()
+    private var realVideo = RealVideo()
     // 当前播放的时间
-    var currentTime: TimeInterval = 0
+    private var currentTime: TimeInterval = 0
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         player.delegate = self
@@ -65,29 +63,31 @@ class VideoTableViewController: HomeTableViewController {
         let cell = tableView.ym_dequeueReusableCell(indexPath: indexPath) as VideoCell
         cell.video = news[indexPath.row]
         // 用户头像
-        cell.avatarButton.rx.controlEvent(.touchUpInside).subscribe { _ in
+        cell.avatarButton.rx.tap.subscribe(onNext: { [weak self] in
             let userDetailVC = UserDetailViewController()
             userDetailVC.userId = cell.video.user_info.user_id
-            self.navigationController?.pushViewController(userDetailVC, animated: true)
-        }.disposed(by: disposeBag)
+            self?.navigationController?.pushViewController(userDetailVC, animated: true)
+        }).disposed(by: disposeBag)
         // 背景图片按钮点击
-        cell.bgImageButton.rx.controlEvent(.touchUpInside).subscribe { _ in
+        cell.bgImageButton.rx.tap.subscribe(onNext: { [weak self] in
             // 如果有值，说明当前有正在播放的视频
-            if let priorCell = self.priorCell {
+            if let priorCell = self?.priorCell {
                 if cell != priorCell {
                     // 判断当前播放器是否正在播放
-                    if self.player.isPlaying {
-                        self.player.pause()
-                        self.player.removeFromSuperview()
+                    if self!.player.isPlaying {
+                        self?.player.pause()
+                        self?.player.removeFromSuperview()
                     }
                     // 设置之前 cell 的属性
                     priorCell.showSubviews()
+                    // 把播放器添加到 cell 上
+                    self?.addPlayer(on: cell)
                 }
             } else { // 说明是第一次点击 cell，直接添加播放器
                 // 把播放器添加到 cell 上
-                self.addPlayer(on: cell)
+                self?.addPlayer(on: cell)
             }
-        }.disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
 
         return cell
     }
